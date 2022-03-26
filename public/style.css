@@ -1,0 +1,82 @@
+body, html {
+	background-color: black;
+}
+
+canvas {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width: 70%;
+	background-color: black;
+}
+
+h3 {
+	color: white;
+	margin: auto;
+    width: 50%;
+    padding: 10px;
+	text-align: center;
+}
+
+h1 {
+	color: white;
+	margin: auto;
+    width: 50%;
+	text-align: center;
+}
+
+#player1Score {
+	position: fixed;
+}
+
+#player2Score {
+	right: 5px;
+	position: fixed;
+}
+
+#winner {
+	position: fixed;
+	width: 500px;
+	height: 100px;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -250px;
+}
+
+#buttonDiv {
+	margin: auto;
+    width: 50%;
+    padding: 10px;
+	text-align: center;
+}
+
+#joinDiv {
+	margin: auto;
+    width: 50%;
+    padding: 10px;
+	text-align: center;
+}
+
+#games, th, td {
+	color: white;
+	border: 1px solid white;
+}
+
+#dynamic {
+	position: relative;
+}
+
+.messageModal {
+	position: fixed;
+	text-align: center;
+	width: 300px;
+}
+
+.ui-dialog-titlebar-close {
+    visibility: hidden;
+}
+
+p, a, label {
+	color: white;
+}

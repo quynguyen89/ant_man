@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Pong</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="lib/jquery-ui-1.12.1.custom/jquery-ui.css">
+		<script src="lib/jquery-3.3.1.min.js"></script>
+		<script src="lib/nipplejs.min.js"></script>
+		<script src="lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	</head>
+	<body>
+		<div id="messageModal" class="messageModal" title="Game Message">
+			<div id="msgBody" class="ui-widget-header"></div>
+		</div>
+		<div id="joystickWrapper">
+			<h1 id="player1Score">0</h1>
+			<h1 id="player2Score">0</h1>
+			<canvas id="pongTable" width="750" height="500" style="border: 1px solid #ffffff;">
+			</canvas>
+		</div>
+		<div id="buttonDiv">
+			<button id="readyButton">Ready</button>
+			<button id="joinButton">Join</button>
+			<label for="ballSpeed">Ball Speed:
+				<select id="ballSpeed">
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option selected value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+				</select>
+			</label>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
