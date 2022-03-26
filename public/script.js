@@ -13,7 +13,7 @@ $(document).ready(function () {
 	readyButton.hide();
 
 	if (window.location.href.substring(7,8) == "l") {
-		connection = new WebSocket('ws://localhost:8080');
+		connection = new WebSocket('ws://13.212.167.254:8080');
 		route = window.location.href.substring(22,27);
 	}
 	else if (window.location.href.substring(8,9) == "p") {
