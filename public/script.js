@@ -13,7 +13,9 @@ $(document).ready(function () {
 	readyButton.hide();
 
   const host = window.location.hostname;
-  const socketServer = `ws://${host}:8080`;
+  const socketProtocal = window.location.protocol === 'https:' ? 'wss' : 'ws';
+  const socketServer = `${socketProtocal}://${host}:8080`;
+  
 
   connection = new WebSocket(socketServer);
   route = window.location.pathname;
