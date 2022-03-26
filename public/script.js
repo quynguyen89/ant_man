@@ -12,9 +12,9 @@ $(document).ready(function () {
 	ballSpeed.hide();
 	readyButton.hide();
 
-  const host = window.location.hostname;
+  const host = window.location.host;
   const socketProtocal = window.location.protocol === 'https:' ? 'wss' : 'ws';
-  const socketServer = `${socketProtocal}://${host}:8080`;
+  const socketServer = `${socketProtocal}://${host}`;
   
 
   connection = new WebSocket(socketServer);
