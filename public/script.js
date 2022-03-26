@@ -18,7 +18,7 @@ $(document).ready(function () {
   
 
   connection = new WebSocket(socketServer);
-  route = window.location.pathname;
+  route = window.location.pathname.replace('/', '');
 
   var joystick = nipplejs.create({
     zone: document.getElementById('joystickWrapper'),
