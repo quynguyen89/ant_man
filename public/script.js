@@ -149,22 +149,26 @@ $(document).ready(function () {
         );
         ctx.stroke();
         if (gameObjs[route].leftpaddle.score !== player1Score || gameObjs[route].rightpaddle.score !== player2Score) {
-          $('#player1Score').empty();
-          $('#player2Score').empty();
-          $('#player1Score').append(gameObjs[route].leftpaddle.score);
-          $('#player2Score').append(gameObjs[route].rightpaddle.score);
+          // $('#player1Score').empty();
+          // $('#player2Score').empty();
+          // $('#player1Score').append(gameObjs[route].leftpaddle.score);
+          // $('#player2Score').append(gameObjs[route].rightpaddle.score);
           player1Score = gameObjs[route].leftpaddle.score;
           player2Score = gameObjs[route].rightpaddle.score;
         }
+        $('#total').empty();
+        var totalString = `<span>${gameObjs[route].leftpaddle.total}</span><span class="strick"> - </span><span>${gameObjs[route].rightpaddle.total}</span>`;
+        $('#total').append(totalString);
         if (gameObjs[route].leftpaddle.score === 11) {
-            $('#total').empty();
-            $('#total').append(gameObjs[route].leftpaddle.total + ' - ' + gameObjs[route].rightpaddle.total);
-            readyButton.show();
+          // $('#total').empty();
+          // var totalString = `<span>${gameObjs[route].leftpaddle.total}</span><span class="strick"> - </span><span>${gameObjs[route].rightpaddle.total}</span>`;
+          // $('#total').append(totalString);
+          readyButton.show();
         }
         if (gameObjs[route].rightpaddle.score === 11) {
-            $('#total').empty();
-            $('#total').append(gameObjs[route].leftpaddle.total + ' - ' + gameObjs[route].rightpaddle.total);
-            readyButton.show();
+          // var totalString = `<span>${gameObjs[route].leftpaddle.total}</span><span class="strick"> - </span><span>${gameObjs[route].rightpaddle.total}</span>`;
+          // $('#total').append(totalString);
+          readyButton.show();
         }
       }
     }
