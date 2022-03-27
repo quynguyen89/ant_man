@@ -129,6 +129,15 @@ $(document).ready(function () {
   });
 
   connection.onmessage = function (message) {
+    if(message.data.substring(0, 5) === route && message.data.substring(6, 13) === 'message' && message.data.substring(14, message.data.length) === 'Player 1 wins!'){
+        showIronManDung();
+        return;
+    }
+    if(message.data.substring(0, 5) === route && message.data.substring(6, 13) === 'message' && message.data.substring(14, message.data.length) === 'Player 2 wins!'){
+        showIronManNam();
+        return;
+    }
+
     if (keyUp) {
       connection.send(route + ' ' + currentPlayer + ' up');
     } else {
@@ -235,8 +244,6 @@ $(document).ready(function () {
     ctx.drawImage(t, tx, 380, 50, 120);
     ctx.drawImage(h, 350, 400, 64, 100);
 
-    console.log(`tx ${tx}`);
-
     ctx.drawImage(reddot, 27, 485, 12, 12);
     ctx.drawImage(reddot, 54, 485, 12, 12);
     ctx.drawImage(reddot, 81, 485, 12, 12);
@@ -263,12 +270,13 @@ $(document).ready(function () {
   }
 });
 
-const showIronManDung = () => {
-  $('.container').hide();
-  $('#iron-man-dung').fadeIn(2000);
-};
 
-const showIronManNam = () => {
-  $('.container').hide();
-  $('#iron-man-nam').fadeIn(2000);
-};
+const showIronManDung = () => {
+    $('.container').hide();
+    $('#iron-man-dung').fadeIn(2000);
+  };
+  
+  const showIronManNam = () => {
+    $('.container').hide();
+    $('#iron-man-nam').fadeIn(2000);
+  };
