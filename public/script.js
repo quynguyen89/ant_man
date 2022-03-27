@@ -37,6 +37,33 @@ $(document).ready(function () {
   ctx.rect(375, 240, 10, 10);
   ctx.rect(0, 225, 10, 50);
   ctx.rect(740, 225, 10, 50);
+
+  var dot = new Image();
+  dot.src = '/img/dot.png';
+  var reddot = new Image();
+  reddot.src = '/img/reddot.png';
+//   ctx.drawImage(dot , 25, 485, 8, 8);
+//         ctx.drawImage(dot , 60, 485, 8, 8);
+//         ctx.drawImage(dot , 95, 485, 8, 8);
+//         ctx.drawImage(dot , 130, 485, 8, 8);
+//         ctx.drawImage(dot , 165, 485, 8, 8);
+//         ctx.drawImage(dot , 200, 485, 8, 8);
+//         ctx.drawImage(dot , 235, 485, 8, 8);
+//         ctx.drawImage(dot , 270, 485, 8, 8);
+//         ctx.drawImage(dot , 305, 485, 8, 8);
+//         ctx.drawImage(dot , 340, 485, 8, 8);
+//         //ctx.drawImage(dot , 375, 485, 8, 8);
+//         ctx.drawImage(dot , 405, 485, 8, 8);
+//         ctx.drawImage(dot , 440, 485, 8, 8);
+//         ctx.drawImage(dot , 475, 485, 8, 8);
+//         ctx.drawImage(dot , 510, 485, 8, 8);
+//         ctx.drawImage(dot , 545, 485, 8, 8);
+//         ctx.drawImage(dot , 580, 485, 8, 8);
+//         ctx.drawImage(dot , 68, 485, 8, 8);
+//         ctx.drawImage(dot , 650, 485, 8, 8);
+//         ctx.drawImage(dot , 685, 485, 8, 8);
+//         ctx.drawImage(dot , 720, 485, 8, 8);
+
   ctx.stroke();
 
   var player1Total = 0;
@@ -48,6 +75,8 @@ $(document).ready(function () {
   a.src = '/img/a.png';
   var t = new Image();
   t.src='/img/t.png'
+
+ 
 
   readyButton.on('click', function () {
     var ballSpeedVote = ballSpeed.val();
@@ -206,9 +235,36 @@ $(document).ready(function () {
 
     function draw(score1, score2){
         var ax = score1 * 300/11;
-        var tx = 690 - (score2 * 260/11);
-        ctx.drawImage(a, ax, 420, 60, 80);
-        ctx.drawImage(t, tx, 420, 60, 80);
+        var tx = 690 - (score2 * 280/11);
+        ctx.drawImage(a, ax, 400, 50, 100);
+        ctx.drawImage(t, tx, 380, 50, 120);
         ctx.drawImage(h, 350, 400, 64, 100);
+
+        console.log(`tx ${tx}`);
+
+        ctx.drawImage(reddot , 27, 485, 12, 12);
+        ctx.drawImage(reddot , 54, 485, 12, 12);
+        ctx.drawImage(reddot , 81, 485, 12, 12);
+        ctx.drawImage(reddot , 109, 485, 12, 12);
+        ctx.drawImage(reddot , 136, 485, 12, 12);
+        ctx.drawImage(reddot , 163, 485, 12, 12);
+        ctx.drawImage(reddot , 190, 485, 12, 12);
+        ctx.drawImage(reddot , 218, 485, 12, 12);
+        ctx.drawImage(reddot , 245, 485, 12, 12);
+        ctx.drawImage(reddot , 272, 485, 12, 12);
+        ctx.drawImage(reddot , 300, 485, 12, 12);
+
+
+        ctx.drawImage(dot , 450, 485, 12, 12);
+        ctx.drawImage(dot , 477, 485, 12, 12);
+        ctx.drawImage(dot , 504, 485, 12, 12);
+        ctx.drawImage(dot , 531, 485, 12, 12);
+        ctx.drawImage(dot , 558, 485, 12, 12);
+        ctx.drawImage(dot , 585, 485, 12, 12);
+        ctx.drawImage(dot , 612, 485, 12, 12);
+        ctx.drawImage(dot , 639, 485, 12, 12);
+        ctx.drawImage(dot , 666, 485, 12, 12);
+        ctx.drawImage(dot , 693, 485, 12, 12);
+        ctx.drawImage(dot , 720, 485, 12, 12);
     }
 });
