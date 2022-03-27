@@ -32,9 +32,12 @@ $(document).ready(function () {
   var player1Score = 0;
   var player2Score = 0;
   ctx.strokeStyle = 'white';
-  ctx.rect(375, 240, 10, 10);
-  ctx.rect(0, 225, 10, 50);
-  ctx.rect(740, 225, 10, 50);
+  ctx.fillStyle = "#fff";
+  ctx.fillRect(0, 225, 10, 50);
+  ctx.fillRect(740, 225, 10, 50);
+
+  ctx.fillStyle = "#fcf803";
+  ctx.fillRect(375, 240, 10, 10);
 
   var dot = new Image();
   dot.src = '/img/dot.png';
@@ -160,7 +163,8 @@ $(document).ready(function () {
       ctx.beginPath();
       var gameObjs = JSON.parse(message.data);
       if (gameObjs[route] != undefined) {
-        ctx.rect(gameObjs[route].puck.x, gameObjs[route].puck.y, gameObjs[route].puck.w, gameObjs[route].puck.h);
+        ctx.fillStyle = "#fcf803";
+        ctx.fillRect(gameObjs[route].puck.x, gameObjs[route].puck.y, gameObjs[route].puck.w, gameObjs[route].puck.h);
         if (gameObjs[route].puck.y <= 0 || gameObjs[route].puck.y >= 490) {
           var audio = new Audio('/audio/Glass_Error1.wav');
           audio.play();
@@ -169,13 +173,15 @@ $(document).ready(function () {
           var audio = new Audio('/audio/Glass_Done5.wav');
           audio.play();
         }
-        ctx.rect(
+
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(
           gameObjs[route].leftpaddle.x,
           gameObjs[route].leftpaddle.y,
           gameObjs[route].leftpaddle.w,
           gameObjs[route].leftpaddle.h
         );
-        ctx.rect(
+        ctx.fillRect(
           gameObjs[route].rightpaddle.x,
           gameObjs[route].rightpaddle.y,
           gameObjs[route].rightpaddle.w,
@@ -227,7 +233,7 @@ $(document).ready(function () {
     }, 3000);
   }
 
-  writeMsg('Welcome to Game <em>' + route + '</em> !');
+  //writeMsg('Welcome to Game <em>' + route + '</em> !');
 
   $(window).on('unload', function (e) {
     if (currentPlayer < 3) {
