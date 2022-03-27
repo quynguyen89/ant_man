@@ -6,8 +6,9 @@ canvas {
     margin-left: auto;
     margin-right: auto;
     width: 80vw;
-    height: 80vh;
+    height: 53vw;
     margin-top:-40px;
+    max-height: 65vh;
 }
 @media (max-width: 586px) {
     canvas {
@@ -209,10 +210,14 @@ a {
     letter-spacing: 2px;
     margin-top: -30px;
 }
+#playView.home-page .game-name{
+    margin-top: 30px;
+}
 .game-main {
     display: block;
     width: 80vw;
-    height: 80vh;
+    height: 53vw;
+    max-height: 65vh;
     margin: 0 auto;
     background: transparent;
     position: relative;
@@ -395,9 +400,19 @@ a {
 }
 #iron-man-nam,
 #iron-man-dung{
-	display: none;
-	position: absolute;		
-	top: 23%;
-	left: 43%;
-	z-index: 99999;
+    display: none;
+    position: absolute;     
+    top: 23%;
+    left: 43%;
+    z-index: 99999;
+}
+#buttonDiv.speed-bottom {
+    margin: 15px auto 0;
+}
+#ballSpeed {
+    border: none;
+    border: none;
+    padding: 8px 8px;
+    font-size: 17px;
+    border-radius: 8px;
 }
