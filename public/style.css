@@ -7,8 +7,7 @@ canvas {
     margin-left: auto;
     margin-right: auto;
 	width: 70%;
-	background-color: black;
-	margin-top:-40px;
+	margin-top:-40px;	
 }
 
 h3 {
@@ -398,4 +397,13 @@ a {
 	background: lightblue;
 	background-image: radial-gradient(circle at top, lightblue, 70%, #000);
 	animation: ballBounce var(--bounceSpeed) infinite ease-out, sceneRotate var(--rotateSpeed) infinite linear reverse;
+}
+
+#iron-man-nam,
+#iron-man-dung{
+	display: none;
+	position: absolute;		
+	top: 23%;
+	left: 43%;
+	z-index: 99999;
 }
