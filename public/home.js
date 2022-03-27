@@ -36,7 +36,7 @@ $(document).ready(function () {
 						<div class="table-tr">
 							<p class="col-1">${game}</p>
 							<p class="col-2">(${data[game].players}/2)</p>
-							<p class="col-3"><button class="btn btn-style-2" data-index=${game}>${joinSpectate}</button></<td>
+							<p class="col-3"><button class="btn btn-style-2 gameJoin" data-index=${game}>${joinSpectate}</button></<td>
 						</tr>`);
         });
         // close table body
