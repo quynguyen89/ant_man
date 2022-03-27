@@ -39,6 +39,16 @@ $(document).ready(function () {
   ctx.rect(740, 225, 10, 50);
   ctx.stroke();
 
+  var player1Total = 0;
+  var player2Total = 0;
+
+  var h = new Image();
+  h.src = '/img/h.png';
+  var a = new Image();
+  a.src = '/img/a.png';
+  var t = new Image();
+  t.src='/img/t.png'
+
   readyButton.on('click', function () {
     var ballSpeedVote = ballSpeed.val();
     connection.send(route + ' ready ' + currentPlayer + ' ' + ballSpeedVote);
@@ -116,7 +126,6 @@ $(document).ready(function () {
       ctx.beginPath();
       var gameObjs = JSON.parse(message.data);
       if (gameObjs[route] != undefined) {
-        console.log(gameObjs[route].puck);
         ctx.rect(gameObjs[route].puck.x, gameObjs[route].puck.y, gameObjs[route].puck.w, gameObjs[route].puck.h);
         if (gameObjs[route].puck.y <= 0 || gameObjs[route].puck.y >= 490) {
           var audio = new Audio('/audio/Glass_Error1.wav');
@@ -148,13 +157,19 @@ $(document).ready(function () {
           player2Score = gameObjs[route].rightpaddle.score;
         }
         if (gameObjs[route].leftpaddle.score === 11) {
-          readyButton.show();
+            $('#total').empty();
+            $('#total').append(gameObjs[route].leftpaddle.total + ' - ' + gameObjs[route].rightpaddle.total);
+            readyButton.show();
         }
         if (gameObjs[route].rightpaddle.score === 11) {
-          readyButton.show();
+            $('#total').empty();
+            $('#total').append(gameObjs[route].leftpaddle.total + ' - ' + gameObjs[route].rightpaddle.total);
+            readyButton.show();
         }
       }
     }
+
+    draw(player1Score, player2Score);
   };
 	
 	msgModal.dialog({
@@ -184,4 +199,12 @@ $(document).ready(function () {
 			connection.send(route + ' disconnect');
 		}
 	});
+
+    function draw(score1, score2){
+        var ax = score1 * 300/11;
+        var tx = 690 - (score2 * 260/11);
+        ctx.drawImage(a, ax, 420, 60, 80);
+        ctx.drawImage(t, tx, 420, 60, 80);
+        ctx.drawImage(h, 350, 400, 64, 100);
+    }
 });

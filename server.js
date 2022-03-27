@@ -41,7 +41,8 @@ function gameObjs(puck, leftpaddle, rightpaddle, players = 0, gamestate = false)
 			ready: false,
 			connected: false,
 			ballSpeedVote: 6,
-			score: 0
+			score: 0,
+            total: 0,
 		};
 	this.rightpaddle = 
 		{
@@ -56,7 +57,8 @@ function gameObjs(puck, leftpaddle, rightpaddle, players = 0, gamestate = false)
 		ready: false,
 		connected: false,
 		ballSpeedVote: 6,
-		score: 0
+		score: 0,
+        total: 0,
 	};
 	this.players = players;
 	this.gamestate = gamestate;
@@ -197,16 +199,24 @@ wss.on('connection', function(connection) {
 			})
 		}, 20);
 	}
-	
+
 	// if a goal is scored this function is trigged
 	function resetPuck(route) {
 		// a player scored 11, end game and send resting values
 		if (concurrentGames[route].leftpaddle.score === 11) {
-			sendMessage("Player 1 wins!", route);
+            concurrentGames[route].leftpaddle.total++;
+            if(concurrentGames[route].leftpaddle.total === 2){
+                sendMessage("Player 1 wins!", route);
+            }
 		}
 		if (concurrentGames[route].rightpaddle.score === 11) {
-			sendMessage("Player 2 wins!", route);
+            concurrentGames[route].rightpaddle.total++;
+            if(concurrentGames[route].rightpaddle.total === 2){
+                sendMessage("Player 2 wins!", route);
+            }
 		}
+
+
 		if (concurrentGames[route].leftpaddle.score === 11 || concurrentGames[route].rightpaddle.score === 11) {
 			concurrentGames[route].puck.x = 375;
 			concurrentGames[route].puck.y = 240;
