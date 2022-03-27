@@ -63,7 +63,7 @@ $(document).ready(function () {
 						event.preventDefault();
 						var gameRoute = $(this).data('index');
 						
-						var text = `${host}://${gameRoute}`;
+						var text = `${host}/${gameRoute}`;
 
 						  const textInput = document.createElement('textarea');
 						  textInput.innerHTML = text;
