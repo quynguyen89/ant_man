@@ -193,6 +193,27 @@ $(document).ready(function () {
           // $('#player2Score').empty();
           // $('#player1Score').append(gameObjs[route].leftpaddle.score);
           // $('#player2Score').append(gameObjs[route].rightpaddle.score);
+
+          //huy - detect if player1 gains one point 
+          if(gameObjs[route].leftpaddle.score === (player1Score + 1) && currentPlayer===1){
+            //play audio thang 1 diem
+            thang1diem();
+          } 
+          else {
+            //play audio thua 1 diem
+            thua1diem();
+          }
+
+          //huy - detect if player2 gains one point 
+          if(gameObjs[route].rightpaddle.score === (player2Score + 1) && currentPlayer===2){
+            //play audio thang 1 diem
+            thang1diem();
+          } 
+          else {
+            //play audio thua 1 diem
+            thua1diem();
+          }	
+
           player1Score = gameObjs[route].leftpaddle.score;
           player2Score = gameObjs[route].rightpaddle.score;
         }
@@ -286,3 +307,46 @@ const showIronManDung = () => {
     $('.container').hide();
     $('#iron-man-nam').fadeIn(2000);
   };
+
+  //huy - audio play function
+function cham()
+{
+  var audio = new Audio('./audio/cham.wav');
+      audio.play();
+}
+
+function thang1diem()
+{
+  var audio = new Audio('./audio/thang1diem.wav');
+      audio.play();
+}
+
+function thua1diem()
+{
+  var audio = new Audio('./audio/thua1diem.wav');
+      audio.play();
+}
+
+function thang1set()
+{
+  var audio = new Audio('./audio/thang1set.wav');
+      audio.play();
+}
+
+function thua1set()
+{
+  var audio = new Audio('./audio/thua1set.wav');
+      audio.play();
+}
+
+function thang()
+{
+  var audio = new Audio('./audio/thang.wav');
+      audio.play();
+}
+
+function thua()
+{
+  var audio = new Audio('./audio/thua.wav');
+      audio.play();
+}
